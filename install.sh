@@ -25,10 +25,13 @@ sudo apt install code
 
 # Other command line tools
 
-sudo apt install -y gh glab curl git ntfs-3g
+sudo apt install -y gh glab curl git ntfs-3g python3-pip openssh-server libssl-dev pkg-config
 
-# git config --global user.name $name
-# git config --global user.email $email
+sudo systemctl start ssh
+sudo systemctl enable ssh
+
+## git config --global user.name $name
+## git config --global user.email $email
 
 gh auth login
 
@@ -36,19 +39,45 @@ glab auth login
 
 # Messaging apps
 
-# Telegram
+## Telegram
 
 sudo snap install telegram-desktop
 
-# WhatsApp
-# There is no official whatsapp client for linux, so to install web version in Chrome:
-# Go to https://web.whatsapp.com/ then click on the three dots in the top right corner 
-# and select "Cast, Save and Share", and Install
+## WhatsApp
 
-# Discord
+### There is no official whatsapp client for linux, so to install web version in Chrome:
+### Go to https://web.whatsapp.com/ then click on the three dots in the top right corner 
+### and select "Cast, Save and Share", and Install
+
+## Discord
 
 sudo snap install discord
 
-# Slack
+## Slack
 
 sudo snap install slack
+
+# Photos
+
+## Install google photos as a web app like WhatsApp
+
+# Notes (Joplin)
+
+sudo snap install joplin-desktop
+
+# Rust
+
+sudo apt install rustup
+rustup install stable
+rustup update
+
+sudo apt install protobuf-compiler
+
+# For Asus Vivobook/Zenbook with AMD Ryzen AI 9 365-370
+
+curl -L -o fan_state https://github.com/ThatOneCalculator/asus-5606-fan-state/raw/main/fan_state
+sudo cp fan_state /usr/local/bin/
+sudo chmod +x /usr/local/bin/fan_state
+rm fan_state
+
+fan_state set high
