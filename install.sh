@@ -81,3 +81,28 @@ sudo chmod +x /usr/local/bin/fan_state
 rm fan_state
 
 fan_state set high
+
+
+# Docker (https://docs.docker.com/engine/install/ubuntu/)
+
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+if ! getent group docker > /dev/null; then
+    sudo groupadd docker
+fi
+
+sudo usermod -aG docker $USER
+
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+
+## May need to log out, and log in back or restart for user groups to apply
