@@ -106,3 +106,7 @@ sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
 ## May need to log out, and log in back or restart for user groups to apply
+
+# NVM (https://github.com/nvm-sh/nvm)
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
