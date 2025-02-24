@@ -25,7 +25,7 @@ sudo apt install code
 
 # Other command line tools
 
-sudo apt install -y gh glab curl git ntfs-3g python3-pip openssh-server libssl-dev pkg-config
+sudo apt install -y gh glab curl git ntfs-3g python3-pip openssh-server libssl-dev pkg-config tldr
 
 sudo systemctl start ssh
 sudo systemctl enable ssh
