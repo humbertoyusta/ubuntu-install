@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-SAVE_DIR="$HOME/Desktop"
+SAVE_DIR="$HOME/Desktop/screenshots"
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 FILENAME="screenshot_$TIMESTAMP.png"
 FULL_PATH="$SAVE_DIR/$FILENAME"

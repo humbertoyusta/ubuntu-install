@@ -3,6 +3,7 @@
 sudo apt install gnome-screenshot xclip
 
 mkdir -p ~/.scripts
+mkdir -p ~/Desktop/screenshots
 cp ./config/home/scripts/screenshot.sh ~/.scripts/screenshot.sh
 chmod +x ~/.scripts/screenshot.sh
 
